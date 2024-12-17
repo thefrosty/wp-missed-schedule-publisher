@@ -19,6 +19,7 @@ namespace TheFrosty\WpMissedSchedulePublisher;
 defined('ABSPATH') || exit;
 
 use TheFrosty\Integration\SimpleHistory;
+use TheFrosty\WpMissedSchedulePublisher\WpAdmin\MissedSchedulePublisher;
 use TheFrosty\WpUtilities\Plugin\PluginFactory;
 use TheFrosty\WpUtilities\WpAdmin\DisablePluginUpdateCheck;
 use function add_action;
