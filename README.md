@@ -10,7 +10,7 @@ Catches scheduled posts that have been missed and publishes them.
 
 ## Package Installation (via Composer)
 
-`$ composer require thefrosty/wp-login-locker:^1.0`
+`$ composer require thefrosty/wp-missed-schedule-publisher:^1.0`
 
 -----
 
