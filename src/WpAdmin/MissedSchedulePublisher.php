@@ -33,6 +33,7 @@ use function wp_nonce_tick;
 use function wp_publish_post;
 use function wp_safe_remote_post;
 use function wp_send_json_success;
+use const MINUTE_IN_SECONDS;
 
 /**
  * Class MissedSchedulePublisher
@@ -250,13 +251,23 @@ JS;
     }
 
     /**
-     * Filters the frequency to allow programmatically control.
-     * Defaults to 900 (5 minutes in seconds).
+     * Filters the allowed batch limit.
+     * Defaults to 20.
+     * @return int
+     */
+    private function getBatchLimit(): int
+    {
+        return (int) apply_filters(self::FILTER_BATCH_LIMIT, self::DEFAULT_BATCH_LIMIT);
+    }
+
+    /**
+     * Filters the frequency to allow programmatic control.
+     * Defaults to 15 minutes (in seconds).
      * @return int
      */
     private function getFrequency(): int
     {
-        return (int) apply_filters(self::FILTER_FREQUENCY, 900);
+        return (int) apply_filters(self::FILTER_FREQUENCY, MINUTE_IN_SECONDS * 15);
     }
 
     /**
@@ -272,7 +283,7 @@ JS;
             $wpdb->prepare(
                 "SELECT ID FROM $wpdb->posts WHERE post_date <= %s AND post_status = 'future' LIMIT %d",
                 strval(current_time('mysql')),
-                intval(apply_filters(self::FILTER_BATCH_LIMIT, self::DEFAULT_BATCH_LIMIT))
+                $this->getBatchLimit()
             )
         );
 
@@ -286,7 +297,7 @@ JS;
          */
         $this->doAction(self::ACTION_SCHEDULE_MISSED, [$scheduled_ids]);
 
-        if (count($scheduled_ids) === self::DEFAULT_BATCH_LIMIT) {
+        if (count($scheduled_ids) === $this->getBatchLimit()) {
             // There's a bit to do.
             update_option(self::OPTION_NAME, 0, false);
         }
