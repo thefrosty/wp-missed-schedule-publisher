@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TheFrosty\WpMissedSchedulePublisher;
+namespace TheFrosty\WpMissedSchedulePublisher\WpAdmin;
 
 use TheFrosty\WpUtilities\Plugin\HooksTrait;
 use TheFrosty\WpUtilities\Plugin\HttpFoundationRequestInterface;
