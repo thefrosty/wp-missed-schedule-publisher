@@ -32,12 +32,11 @@ if (is_readable(__DIR__ . '/vendor/autoload.php')) {
 
 $plugin = PluginFactory::create('missed-schedule-publisher');
 
-$plugin->add(new SimpleHistory());
-
 if (is_admin()) {
     $plugin
         ->add(new DisablePluginUpdateCheck())
-        ->add(new MissedSchedulePublisher());
+        ->add(new MissedSchedulePublisher())
+        ->add(new SimpleHistory());
 }
 
 add_action('plugins_loaded', static function () use ($plugin): void {
