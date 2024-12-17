@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TheFrosty\Integration;
+namespace TheFrosty\WpMissedSchedulePublisher\Integration;
 
-use TheFrosty\WpMissedSchedulePublisher\MissedSchedulePublisher;
+use TheFrosty\WpMissedSchedulePublisher\WpAdmin\MissedSchedulePublisher;
 use TheFrosty\WpUtilities\Plugin\HooksTrait;
 use TheFrosty\WpUtilities\Plugin\WpHooksInterface;
 use function array_map;
