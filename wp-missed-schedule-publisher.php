@@ -18,8 +18,6 @@ namespace TheFrosty\WpMissedSchedulePublisher;
 
 defined('ABSPATH') || exit;
 
-use TheFrosty\Integration\SimpleHistory;
-use TheFrosty\WpMissedSchedulePublisher\WpAdmin\MissedSchedulePublisher;
 use TheFrosty\WpUtilities\Plugin\PluginFactory;
 use TheFrosty\WpUtilities\WpAdmin\DisablePluginUpdateCheck;
 use function add_action;
@@ -36,8 +34,8 @@ $plugin = PluginFactory::create('missed-schedule-publisher');
 if (is_admin()) {
     $plugin
         ->add(new DisablePluginUpdateCheck())
-        ->add(new MissedSchedulePublisher())
-        ->add(new SimpleHistory());
+        ->add(new Integration\SimpleHistory())
+        ->add(new WpAdmin\MissedSchedulePublisher());
 }
 
 add_action('plugins_loaded', static function () use ($plugin): void {
