@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Missed Schedule Publisher
- * Description:
+ * Description: Catches scheduled posts that have been missed and publishes them.
  * Author: Austin Passy
  * Author URI: https://austin.passy.co/
  * Version: 1.0.0
