@@ -12,6 +12,14 @@ Catches scheduled posts that have been missed and publishes them.
 
 `$ composer require thefrosty/wp-missed-schedule-publisher:^1.0`
 
+----
+
+### Integrations
+
+Supports the following 3rd party plugin(s):
+
+* [Simple History](https://wordpress.org/plugins/simple-history/) -- _log missed scheduled events and publications_
+
 -----
 
 - [Actions](#actions)

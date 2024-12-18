@@ -4,7 +4,7 @@
  * Description: Catches scheduled posts that have been missed and publishes them.
  * Author: Austin Passy
  * Author URI: https://austin.passy.co/
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.6
  * Tested up to: 6.7.1
  * Requires PHP: 8.1
