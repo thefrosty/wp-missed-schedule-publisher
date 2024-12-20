@@ -1,6 +1,6 @@
 {
     "name": "thefrosty/wp-missed-schedule-publisher",
-    "description": "",
+    "description": "Catches scheduled posts that have been missed and publishes them.",
     "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
