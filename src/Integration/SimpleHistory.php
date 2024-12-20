@@ -16,7 +16,7 @@ use function sprintf;
 
 /**
  * Class SimpleHistory
- * @package TheFrosty\Integration
+ * @package TheFrosty\WpMissedSchedulePublisher\Integration
  */
 class SimpleHistory implements WpHooksInterface
 {

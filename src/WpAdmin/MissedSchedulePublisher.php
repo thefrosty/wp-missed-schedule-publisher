@@ -37,7 +37,7 @@ use const MINUTE_IN_SECONDS;
 
 /**
  * Class MissedSchedulePublisher
- * @package TheFrosty\WpMissedSchedulePublisher
+ * @package TheFrosty\WpMissedSchedulePublisher\WpAdmin
  */
 class MissedSchedulePublisher implements HttpFoundationRequestInterface, WpHooksInterface
 {
